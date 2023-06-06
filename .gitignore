@@ -133,5 +133,10 @@ config.py
 
 #ignore image_scraper folder
 #Image_scraper/
+Image_scraper/
 Images/hamster/converted
 Images/hamster/raw_scrape
+Images/cat/converted
+Images/cat/raw_scrape
+Images/dog/converted
+Images/dog/raw_scrape
