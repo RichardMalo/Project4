@@ -132,6 +132,6 @@ dmypy.json
 config.py
 
 #ignore image_scraper folder
-Image_scraper/
+#Image_scraper/
 Images/hamster/converted
 Images/hamster/raw_scrape
