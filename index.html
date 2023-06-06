@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+</head>
+
+<style>
+  .middle {
+      grid-column: 2 / 3;
+      text-align: center;
+    }
+</style>
+
+<style>
+  nav a {
+    text-decoration: none;
+    margin-right: 10px;
+    position: relative;
+  }
+
+  nav a::after {
+    content: "|";
+    position: absolute;
+    right: -5px;
+  }
+
+  nav a:last-child::after {
+    content: none;
+  }
+</style>
+
+<body>
+  <div class="middle">
+  <h1>title</h1>
+</body>
+
+<body>
+  <nav>
+    <a href="Templates/Tab1.html">Tab1 </a>
+    <a href="Templates/Tab2.html">Tab2 </a>
+    <a href="Templates/Tab3.html">Tab3 </a>
+    <a href="Templates/Tab4.html">Tab4 </a>
+  </nav>
+
+  <input type="file" id="upload" accept="image/*">
+  <button id="scan">Scan</button>
+  <button id="reset">Reset</button>
+  <div id="preview"></div>
+
+  <style>
+    #preview img {
+      max-width: 650px;
+      max-height: 650px;
+    }
+  </style>
+</body>
+
+<body>
+  <script>
+    const uploadInput = document.getElementById('upload');
+    const previewElement = document.getElementById('preview');
+  
+    uploadInput.addEventListener('change', handleFileUpload);
+  
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+  
+        previewElement.innerHTML = '';
+        previewElement.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+    
+    // Reset file
+    const resetButton = document.getElementById('reset');
+    resetButton.addEventListener('click', function() {
+      uploadInput.value = '';
+      previewElement.innerHTML = '';
+    });
+  </script>
+</body>
+</html>
