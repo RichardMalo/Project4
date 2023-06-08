@@ -11,10 +11,10 @@ UPLOAD_FOLDER = 'D:/Code/temp'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Load the pre-trained model
-model = load_model('D:/Code/temp/model.h5')
+model = load_model('D:/DataBootcamp/Projects/Project4/Template/animal_classifier.h5')
 
 # Define the class labels
-class_labels = ['cat', 'dog']
+class_labels = ['bird', 'cat', 'dog', 'dragon', 'fish', 'hamster']
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -44,7 +44,7 @@ def upload_file():
     return render_template('upload.html')
 
 def classify_image(file_path):
-    img = image.load_img(file_path, target_size=(200, 200))
+    img = image.load_img(file_path, target_size=(240, 240))
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     img_array /= 255.0
@@ -54,6 +54,7 @@ def classify_image(file_path):
     class_label = class_labels[class_index]
 
     return class_label
+    return class_index
 
 if __name__ == '__main__':
     app.run()
