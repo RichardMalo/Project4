@@ -133,7 +133,6 @@ config.py
 
 #ignore image_scraper folder
 
-Image_scraper/
 Images/hamster/converted
 Images/hamster/raw_scrape
 Images/cat/converted
@@ -141,6 +140,7 @@ Images/cat/raw_scrape
 Images/dog/converted
 Images/dog/raw_scrape
 
+Image_scraper/
 chris_test_model.ipynb
 Template/animal_classifier.h5
 project4.pem
