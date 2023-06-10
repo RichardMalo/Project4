@@ -141,6 +141,7 @@ Images/dog/converted
 Images/dog/raw_scrape
 
 Image_scraper/
+Images/
 chris_test_model.ipynb
 Template/animal_classifier.h5
 project4.pem
