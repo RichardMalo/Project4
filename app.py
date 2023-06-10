@@ -1,5 +1,6 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template # redirect, url_for
 import os
+from PIL import Image
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
@@ -33,11 +34,17 @@ def upload_file():
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(file_path)
 
+        preprocessed_image = preprocess_image(file_path) 
+
         # Perform image classification
-        result = classify_image(file_path)
+        result = classify_image(preprocessed_image)
 
         # Delete the temporary uploaded file
         os.remove(file_path)
+        
+        if os.path.exists(preprocessed_image):
+                os.remove(preprocessed_image)
+
 
         return render_template('result.html', result=result)
 
@@ -54,7 +61,24 @@ def classify_image(file_path):
     class_label = class_labels[class_index]
 
     return class_label
-    return class_index
+
+def preprocess_image(file_path):
+    # Open the image file
+    img = Image.open(file_path)
+    
+    # Convert to RGB if necessary
+    if img.mode != "RGBA":
+        img = img.convert("RGBA")
+    
+    # Resize the image to 240x240 pixels
+    img.thumbnail((240,240))
+    
+    # Save the image as PNG format
+    png_path = os.path.splitext(file_path)[0] + ".png"
+    img.save(png_path, "PNG")
+    
+    # Return the path to the converted image
+    return png_path
 
 if __name__ == '__main__':
     app.run()
