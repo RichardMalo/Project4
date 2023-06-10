@@ -1,13 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Upload Image</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Group 3 - Project 4</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h1>Upload an Image</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="Upload">
-    </form>
-</body>
+
+<body style="background-color:gray;">
+  <div class="title">Image Classification Project</div>
+
+  <div class="tab" style="background-color:gray;">
+    <button class="tablinks active" onclick="openTab(event, 'Image Scanner')" id="defaultOpen">Image Scanner</button>
+    <button class="tablinks" onclick="openTab(event, 'Info')">Info</button>
+    <button class="tablinks" onclick="openTab(event, 'Contacts')">Contacts</button>
+  </div>
+
+  <!-- Image Upload Tab-->
+  <div id="Image Scanner" class="tabcontent">
+    <div class="IS_container">
+      <!-- Image Upload Box -->
+      <div class="IS_box1">
+        <form method="POST" enctype="multipart/form-data">
+          <input class="button" type="file" name="file" id="imageInput" accept="image/*">
+          <input class="button" type="submit" id="uploadButton" value="Upload">
+          <input class="button" type="reset" id="resetButton" value="Reset">
+          <div id="preview"></div>
+        </form>
+      </div>
+
+      <!-- box2-->
+      <div class="IS_box2">
+        <div class="subheader" style="color: rgb(116, 27, 27);"><br><br>Disclaimer!<br></div>
+          <div class="p" style="font-weight: normal;">The model will only identify popular types of pets at a x% accuracy. 
+            If the uploaded image is of any other type of pet, our model will classify it as one of the following categories.
+            <ul>
+              <li>Birds</li>
+              <li>Bearded dragons</li>
+              <li>Cats</li>
+              <li>Dogs</li>
+              <li>Fish</li>
+              <li>Hamsters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+
+  <!-- Info Tab-->
+  <div id="Info" class="tabcontent">
+    <div class="Info_container">
+      <div class="Info_image_container">
+        <!-- Project Github -->
+        <a href="https://github.com/Rolosaregood/Project4" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Project Github Page" width=50% height=auto>
+        </a>
+      </div>
+      <div class="Info_text-container">
+        <style>
+          p {
+            font-size: 25px; 
+          }
+        </style>
+        <p>Visit our project's GitHub page to explore a comprehensive analysis of our work, 
+          including detailed steps, insights, and any errors or mistakes encountered during the course of this project. 
+          On our GitHub page, you will find information that sheds light on our approach, methodologies, 
+          and the valuable lessons we learned along the way.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Contact Tab-->
+  <div id="Contacts" class="tabcontent">
+    <div class="contacts_container">
+      <!-- Names-->
+      <div class="contacts_name">Christopher Yang</div>
+      <div class="contacts_name">Richard Malolepszy</div>
+      <div class="contacts_name">Sameer Zubairi</div>
+      <div class="contacts_name">Alan Deng</div>
+      
+      <!-- Description-->
+      <div class="contacts_des"></div>
+      <div class="contacts_des"></div>
+      <div class="contacts_des"></div>
+      <div class="contacts_des"></div>
+
+      <!-- Github Page-->
+      <a href="https://github.com/Duckferd" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Project Github Page" width="100" height="100">
+      </a>
+      <a href="https://github.com/Rolosaregood" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Project Github Page" width="100" height="100">
+      </a>
+      <a href="https://github.com/szooberry " target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Project Github Page" width="100" height="100">
+      </a>
+      <a href="https://github.com/AlanDeng7" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Project Github Page" width="100" height="100">
+      </a>
+
+      <!-- LinkedIN Page-->
+      <a href="https://github.com/Rolosaregood/Project4" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Project Github Page" width="100" height="100">
+      </a>
+      <a href="https://github.com/Rolosaregood/Project4" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Project Github Page" width="100" height="100">
+      </a>
+      <a href="https://github.com/Rolosaregood/Project4" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Project Github Page" width="100" height="100">
+      </a>
+      <a href="https://www.linkedin.com/in/alandeng7/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="Project Github Page" width="100" height="100">
+      </a>
+    </div>
+  </div>
+
+    <!-- Javascript -->
+    
+  <script src="{{ url_for('static', filename='reset.js') }}"></script>
+  <script src="{{ url_for('static', filename='image_preview.js') }}"></script>
+  
+  <script>
+  //function to change tabs
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+  </body>
 </html>
+
