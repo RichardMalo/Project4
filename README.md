@@ -392,5 +392,41 @@ def upload_file():
 The details of the flask set up code can be found in the app.py file in this repository.
 
 ### **Deploying the Model on EC2**
+Deploying the flask app on AWS is outlined in [This Tutorial](https://www.twilio.com/blog/deploy-flask-python-app-aws).
+
+For this project, tensorflow's memory requirements meant that Free Tier AWS server (t.2 micro) was insufficient with only 1gb of memory. The t.2 medium server was required to run tensorflow.
+
+Here are the list of components that were uploaded to AWS:
+- Static/
+- templates/
+- app.py
+- h5 model
+
+These files could be uploaded by running git clone on the repository. But since only a few files were uploaded, instead used Windows: 
+```
+scp -r <FULL_PATH>/ ubuntu@<YOUR_IP_ADDRESS>:/home/ubuntu/deployedapp
+```
+
+Flask app was then changed to appropriate directories for javascript and css files (templates and Static).
 
 ### **Creating the HTML Page for End-Users and Connecting to Flask**
+For the front-end aspect of this project, a deliberate decision was made to maintain a design approach that is simplistic that is easy to understand for the users. The dashboard interface comprises only three tabs: Image Scanner, Additional Information, and Contacts. The web page has been divided into two distinct files, named 'upload.html' and 'results.html'.
+
+![Model Prediction Webpage](/Images/Read_me_images/upload_html.png "Model Webpage")
+
+Within the Image Scanner tab, users are presented with three buttons: File Upload, Upload, and Reset. The File Upload button enables users to select and upload an image, which is temporarily stored in a designated location. The Upload button initiates the image processing workflow by executing our machine learning model, ultimately determining the type of pet depicted in the image. Lastly, the Reset button offers users the capability to remove the currently selected file.
+
+In the Information tab, users are encouraged to explore a comprehensive report and access the project's corresponding files on our GitHub repository, providing them with further insights and details. The Contacts tab showcases the contributors involved in this project, along with their respective github pages and linkedIN profiles.
+
+To prioritize the development of our machine learning model within the limited time and resources available, our main objective for the webpage's front-end design was to ensure ease of use. We aimed to create a user-friendly interface that prioritizes simplicity and cleanliness, resulting in a seamless and engaging experience for our valued users. By keeping the design straightforward, we were able to direct our focus towards the core functionality of our machine learning model.
+
+## Files and Folders in the Project
+**Data_Model**: h5train.ipynb
+**H5_Model**: animal_classifier.h5
+**Image_scraper**: All of the various Python files to source data/clean/resize/rename/renumber the images
+**Images**: Raw images of Dog/Cat/Hamster/Fish/Bird/Bearded Dragon
+**Project Proposal**: Initial idea/Elevator pitch for the project PDF
+**Static**: CSS/JS
+**templates**: HTML
+**app.py** - python file to run on local machine
+**README.md** - this file
