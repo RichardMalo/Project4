@@ -203,7 +203,7 @@ for imgdir, label in zip(imgdirs, labeldirs):
 More info on how the test and train datasets were split can be found in the test_train_directories.ipynb file in the Test_train_sets directory.
 
 ### **Defining and Training the Model**
-The Convolutional Neural Network (CNN) model was constructed and trained using Tensorflow. Here are the libaries and dependies used to define, train and export the model to an h5 file:
+The Convolutional Neural Network (CNN) model was constructed and trained using Tensorflow. Here are the libraries and dependencies used to define, train and export the model to an h5 file:
 
 ```python
 import os
