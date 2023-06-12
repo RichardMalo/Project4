@@ -139,6 +139,6 @@ Images/cat/converted
 Images/cat/raw_scrape
 Images/dog/converted
 Images/dog/raw_scrape
-Template/animal_classifier.h5
+H5_Model/animal_classifier.h5
 project4.pem
 templates/stashed/
