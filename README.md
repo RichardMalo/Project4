@@ -422,11 +422,19 @@ To prioritize the development of our machine learning model within the limited t
 
 ## Files and Folders in the Project
 **Data_Model**: h5train.ipynb
+
 **H5_Model**: animal_classifier.h5
+
 **Image_scraper**: All of the various Python files to source data/clean/resize/rename/renumber the images
+
 **Images**: Raw images of Dog/Cat/Hamster/Fish/Bird/Bearded Dragon
+
 **Project Proposal**: Initial idea/Elevator pitch for the project PDF
+
 **Static**: CSS/JS
+
 **templates**: HTML
+
 **app.py** - python file to run on local machine
+
 **README.md** - this file
