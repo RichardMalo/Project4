@@ -1,10 +1,10 @@
 # Pet Identifying Convolutional Neural Network Model
 
 ### GROUP MEMBERS ###
-Christopher, Yang
-Sameer Zubairi
-Alan, Deng
-Richard, Malolepszy
+1. Christopher, Yang 
+2. Sameer, Zubairi
+3. Alan, Deng
+4. Richard, Malolepszy
 
 ## **Overview**
 The purpose of this project is to create a Deep Learning Convolutional Neural Network image classifier model that can identify various types of pets from an uploaded .jpg or .png image file. This model should correctly identify if a given image is of a cat, dog, bird, fish, hamster or bearded dragon. Try it for yourself [here](http://54.175.146.240:8080/).
