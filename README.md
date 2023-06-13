@@ -1,5 +1,11 @@
 # Pet Identifying Convolutional Neural Network Model
 
+### GROUP MEMBERS ###
+Christopher, Yang
+Sameer Zubairi
+Alan, Deng
+Richard, Malolepszy
+
 ## **Overview**
 The purpose of this project is to create a Deep Learning Convolutional Neural Network image classifier model that can identify various types of pets from an uploaded .jpg or .png image file. This model should correctly identify if a given image is of a cat, dog, bird, fish, hamster or bearded dragon. Try it for yourself [here](http://54.175.146.240:8080/).
 
@@ -446,6 +452,13 @@ In the Information tab, users are encouraged to explore a comprehensive report a
 
 To prioritize the development of our machine learning model within the limited time and resources available, our main objective for the webpage's front-end design was to ensure ease of use. We aimed to create a user-friendly interface that prioritizes simplicity and cleanliness, resulting in a seamless and engaging experience for our valued users. By keeping the design straightforward, we were able to direct our focus towards the core functionality of our machine learning model.
 
+## Sources of images:
+https://imgur.com/search?q=
+https://www.flickr.com/search/?text=
+https://www.google.com/
+https://www.bing.com/
+https://www.kaggle.com/competitions/dogs-vs-cats/
+
 ## Files and Folders in the Project
 **Data_Model**: h5train.ipynb
 
@@ -464,3 +477,5 @@ To prioritize the development of our machine learning model within the limited t
 **app.py** - python file to run on local machine
 
 **README.md** - this file
+
+
