@@ -313,7 +313,7 @@ Epoch 100/100
 ```
 ![Middle attempt](/Images/Flickr_vs_imgur/plot1.png "Middle outcomes")
 
-Next attempt:
+Final attempt:
 Our model was still performing poorly on differentiating cats and dogs so we went to slighly over 5000+ images for both cats and dogs while keeping the rest equal. This imporved the performance of the model and it seems to detect cats and dogs a lot better than previous models. We got to a great equilibrium at 30 epochs and 85% accuracy where the model wasn't overtrained.
 
 ![Final outcomes](/Images/Flickr_vs_imgur/plot2.png "Final outcomes")
@@ -453,11 +453,11 @@ In the Information tab, users are encouraged to explore a comprehensive report a
 To prioritize the development of our machine learning model within the limited time and resources available, our main objective for the webpage's front-end design was to ensure ease of use. We aimed to create a user-friendly interface that prioritizes simplicity and cleanliness, resulting in a seamless and engaging experience for our valued users. By keeping the design straightforward, we were able to direct our focus towards the core functionality of our machine learning model.
 
 ## Sources of images:
-https://imgur.com/search?q=
-https://www.flickr.com/search/?text=
-https://www.google.com/
-https://www.bing.com/
-https://www.kaggle.com/competitions/dogs-vs-cats/
+1. https://imgur.com/search?q=
+2. https://www.flickr.com/search/?text=
+3. https://www.google.com/
+4. https://www.bing.com/
+5. https://www.kaggle.com/competitions/dogs-vs-cats/
 
 ## Files and Folders in the Project
 **Data_Model**: h5train.ipynb
