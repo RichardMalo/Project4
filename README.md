@@ -318,6 +318,10 @@ Our model was still performing poorly on differentiating cats and dogs so we wen
 
 ![Final outcomes](/Images/Flickr_vs_imgur/plot2.png "Final outcomes")
 
+This final run is located in: Data_Model/h5train3.ipynb It ran for 25 Epochs and achieved 86.67% accuracy with not a lot of overtraining/overfitting.
+
+![Last run](/Images/Flickr_vs_imgur/LastEpoch.png "Final run")
+
 
 ## **Deployment of the model for end-user interaction**
 A flask API framework was created to allow uploaded images to be stored in a temporary folder, preprocessed to fit the dimmensions and filetype of the model (i.e. .png filetype and image frame of 240x240 pixels). The large model file as well as uploaded images were stored on EC2 on AWS and routed through the flask API for the model to make a prediction on newly uploaded images. A webpage was then set up where images of pets can be uploaded by end-users and the model's predictions are displayed. 
