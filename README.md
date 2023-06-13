@@ -286,6 +286,19 @@ save_path = '/content/drive/MyDrive/animal_classifier.h5'
 # Save the model to the specified path in your Google Drive
 model.save(save_path)
 ```
+## **Optimization of the model**
+Our first attempt at the model:
+We started off with just 500 images for all 6 categories and ran for 10 Epochs. This yielded a 60% accuracy for our model.
+![First attempt](/Images/Flickr_vs_imgur/first.png "First outcomes")
+Our second attempt with the model:
+We then ran the same model with 30 Epochs which upped our results to a 70% accuracy for the model.
+Next attempt:
+We then added additional a slight amount of images to train from and ran it for 30 epochs. Taking our accuracy from 70% to 71%.
+Next attempt:
+We then ran 100 epochs but learned that model simply overtrains and overfits. Even though we got to 89.9% the model was overfit/overtrained/ Overfitting occurs when the model becomes too complex relative to the available training data. It starts to memorize specific examples, noise, or outliers in the training set, which are not representative of the underlying patterns in the broader dataset.
+Next attempt:
+Our model was still performing poorly on differentiating cats and dogs so we went to slighly over 5000+ images for both cats and dogs while keeping the rest equal. This imporved the performance of the model and it seems to detect cats and dogs a lot better than previous models. We got to a great equilibrium at 30 epochs and 85% accuracy where the model wasn't overtrained.
+
 
 ## **Deployment of the model for end-user interaction**
 A flask API framework was created to allow uploaded images to be stored in a temporary folder, preprocessed to fit the dimmensions and filetype of the model (i.e. .png filetype and image frame of 240x240 pixels). The large model file as well as uploaded images were stored on EC2 on AWS and routed through the flask API for the model to make a prediction on newly uploaded images. A webpage was then set up where images of pets can be uploaded by end-users and the model's predictions are displayed. 
