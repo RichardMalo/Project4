@@ -9,6 +9,8 @@
 ## **Overview**
 The purpose of this project is to create a Deep Learning Convolutional Neural Network image classifier model that can identify various types of pets from an uploaded .jpg or .png image file. This model should correctly identify if a given image is of a cat, dog, bird, fish, hamster or bearded dragon. Try it for yourself [here](http://54.175.146.240:8080/).
 
+### http://54.175.146.240:8080/ ###
+
 This image classification model was developed with TensorFlow, and was trained and tested using thousands of images of cats, dogs, birds, fish, hamsters and bearded dragons scraped from Flickr and Imgur using Beautiful Soup. The model was then tested and optimized locally, before being deployed on AWS EC2. Finally, a webpage was created to allow users to upload images of pets which are fed through the model via API created using Flask.
 
 The following steps have been outlined in more detail below:
